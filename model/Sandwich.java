@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Sandwich {
 
-    private String customerName;
+    private String customerName = "Set Name";
     private Bread bread;
     private Meat meat;
     private ArrayList<Veggie> veggies = new ArrayList<>();
@@ -13,6 +13,15 @@ public class Sandwich {
 
     public Sandwich(String customerName){
         this.customerName = customerName;
+        
+    }
+
+    public Sandwich(){
+
+    }
+
+    public void setCustomerName(String name){
+        this.customerName = name;
     }
 
     public void addBread(Bread bread) {
@@ -24,12 +33,39 @@ public class Sandwich {
     }
 
     public void addVeggie(Veggie veggie){
+        if(veggies.size() == 3){
+            veggies.remove(0);
+        }
         veggies.add(veggie);
     }
 
     public void addSauce(Sauce sauce){
+        if(sauces.size() == 3){
+            sauces.remove(0);
+        }
         sauces.add(sauce);
     }
+
+    public String getSauceNames(){
+        String sauceNames = "";
+        for(Sauce sauce : sauces){
+            sauceNames += sauce.getName() +", ";
+        }
+        return sauceNames;
+    }
+
+    public String getVeggieNames(){
+        String veggieNames = "";
+        for(Veggie veggie : veggies){
+            veggieNames += veggie.getName() + ", ";
+        }
+        return veggieNames;
+    }
+
+    public String getCustomerName(){
+        return customerName;
+    }
+    
      
     public double getPrice(){
         double breadPrice = bread.getPrice();
