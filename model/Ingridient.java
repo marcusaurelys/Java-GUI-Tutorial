@@ -8,11 +8,11 @@ abstract class Ingridient {
         this.price = price;
     }
 
-    String getName(){
+    public String getName(){
         return name;
     }
 
-    double getPrice(){
+    public double getPrice(){
         return price;
     }
 
@@ -20,27 +20,10 @@ abstract class Ingridient {
 
 }
 
-class Bread extends Ingridient {
-    public Bread(String name, double price){
-        super(name, price);
-    }
-}
 
-class Meat extends Ingridient {
-    public Meat(String name, double price){
-        super(name, price);
-    }
-}
 
-class Veggie extends Ingridient {
-    public Veggie(String name, double price){
-        super(name, price);
-    }
-}
 
-class Sauce extends Ingridient {
-    public Sauce(String name, double price){
-        super(name, price);
-    }
-}
+
+
+
 
