@@ -53,6 +53,8 @@ public class OrderController {
             public void actionPerformed(ActionEvent e){
                 sandwich.addBread(model.getBread(view.getBreadName()));
                 view.setCurTotal(sandwich.getPrice());
+                new ReceiptView(sandwich);
+                goToMenu();
             }
         });
 

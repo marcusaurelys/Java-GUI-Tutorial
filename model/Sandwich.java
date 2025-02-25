@@ -100,6 +100,22 @@ public class Sandwich {
         }
     }
 
+    public Bread getBread(){
+        return bread;
+    }
+
+    public Meat getMeat(){
+        return meat;
+    }
+
+    public ArrayList<Veggie> getVeggies(){
+        return veggies;
+    }
+
+    public ArrayList<Sauce> getSauces(){
+        return sauces;
+    }
+
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
 
