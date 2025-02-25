@@ -26,7 +26,7 @@ public class OrderView extends JPanel {
     private ArrayList<JButton> sauceButtons = new ArrayList<>();
 
 
-    private JLabel nameLabel, meatLabel, veggieChoices, sauceChoices, curTotal;
+    private JLabel nameLabel, meatLabel, veggieChoices, sauceChoices;
 
     public OrderView(List<String> breadOptions, List<String> meatOptions, List<String> veggieOption, List<String> sauceOptions){
         this.breadOptions.addAll(breadOptions);
@@ -51,13 +51,10 @@ public class OrderView extends JPanel {
         add(back, gbc);
 
     
-        //add button for getting customer name input.
-        gbc.anchor = GridBagConstraints.CENTER;
-        nameLabel = new JLabel("Customer Name:");
-        nameLabel.setFont(new Font("Arial", Font.BOLD, 20));
-        nameInput = new JTextField("Juan", 15);
-        nameInput.setFont(new Font("Arial", Font.BOLD, 20));
-        confirmNameButton = new JButton("Confirm Name");
+        //TODO: Fill Name Component with a text input field and a label.
+
+        
+        
         JPanel nameComponent = new JPanel();
         nameComponent.setLayout(new BorderLayout());
         nameComponent.add(nameLabel, BorderLayout.NORTH);
@@ -90,26 +87,6 @@ public class OrderView extends JPanel {
         gbc.gridy = 3; 
         add(breadComponent, gbc);
 
-        //add buttons for meat
-        meatLabel = new JLabel("Meat: ");
-        JPanel meatButtonsPanel = new JPanel();
-        meatButtonsPanel.setLayout(new GridLayout(1, meatOptions.size()));
-        for(String meat : meatOptions){
-            JButton btn = new JButton(meat);
-            meatButtons.add(btn);
-            meatButtonsPanel.add(btn);
-        }
-        JPanel meatComponent = new JPanel();
-        meatComponent.setLayout(new BorderLayout());
-        meatComponent.add(meatLabel, BorderLayout.NORTH);
-        meatComponent.add(meatButtonsPanel, BorderLayout.CENTER);
-        gbc.gridy = 5;
-        gbc.weightx = 1.0;
-        gbc. weighty = 1.0;
-        gbc.gridheight = 10;
-        gbc.gridwidth = 3;
-        gbc.fill = GridBagConstraints.BOTH;
-        add(meatComponent, gbc);
 
 
         JLabel veggieLabel = new JLabel("Veggies: ");
@@ -128,6 +105,7 @@ public class OrderView extends JPanel {
         gbc.gridwidth = 1;
         gbc.gridy= 16;
         gbc.gridwidth = 2;
+        gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = new Insets(10, 0, 10, 0);
         add(veggieComponent, gbc);
 
@@ -148,10 +126,12 @@ public class OrderView extends JPanel {
         gbc.insets = new Insets(10, 0, 10, 0);
         add(sauceComponent, gbc);
 
-        veggieChoices = new JLabel("Veggies: ");
-        veggieChoices.setForeground(Color.YELLOW);
-        sauceChoices = new JLabel("Sauces: ");
-        sauceChoices.setForeground(Color.YELLOW);
+        //TODO: ADD JLabel to show which veggies are selected
+
+
+
+        //TODO: ADD JLabel to show which sauces are selected.
+
 
         gbc.gridheight=1;
         gbc.gridy=27;
@@ -159,18 +139,9 @@ public class OrderView extends JPanel {
         gbc.gridy=28;
         add(sauceChoices, gbc);
 
-        curTotal = new JLabel("");
-        curTotal.setForeground(Color.YELLOW);
-        curTotal.setFont(new Font("Arial", Font.BOLD, 24));
-        curTotal.setHorizontalAlignment(JLabel.CENTER);
-        gbc.gridx=0;
-        gbc.gridwidth=3;
-        gbc.gridy=29;
-        add(curTotal, gbc);
 
 
-
-        //add confirm button
+        //TODO: ADD Confirm Button
         confirmButton = new JButton("Confirm Order");
         gbc.weighty = 0.0;
         gbc.gridy = 30;
@@ -182,13 +153,11 @@ public class OrderView extends JPanel {
 
     }
 
+    //TODO: Complete the function
     public String getCustomerName(){
-            return nameInput.getText();        
+        return "";
     }
 
-    public void setCurTotal(double total){
-        curTotal.setText("Total Price: " + String.valueOf(total));
-    }
 
     public String getBreadName(){
         return (String) breadInput.getSelectedItem();

@@ -10,36 +10,23 @@ public class ShopModel {
     private ArrayList<Sauce> sauceOptions;
 
     public ShopModel(){
+
+        //TODO: Instantiate breadOptions, meatOptions, veggieOptions, sauceOptions
         breadOptions = new ArrayList<Bread>(Arrays.asList(
-            new Bread("Italian Bread", 30.00),
-            new Bread("Wheat", 30.00),
-            new Bread("Honey Oat", 45.00),
-            new Bread("Parmesan Oregano", 50.00)
+
         ));
 
         meatOptions = new ArrayList<Meat>(Arrays.asList(
-            new Meat("Tuna", 30.00),
-            new Meat("Meatball Marinara", 40.00),
-            new Meat("Chicken", 50.00),
-            new Meat("Steak", 100.00)
+
         ));
 
         veggieOptions = new ArrayList<Veggie>(Arrays.asList(
-            new Veggie("Lettuce", 5.00),
-            new Veggie("Onions", 5.00),
-            new Veggie("Tomatoes", 10.00),
-            new Veggie("Pickles", 15.00),
-            new Veggie("Jalapeno", 15.00),
-            new Veggie("Cucumbers", 15.00)
+
             
         ));
 
         sauceOptions = new ArrayList<Sauce>(Arrays.asList(
-            new Sauce("Mayo", 10.00),
-            new Sauce("Ketchup", 15.00),
-            new Sauce("BBQ Sauce", 20.00),
-            new Sauce("Thousand Islands", 20.00),
-            new Sauce("Honey Mustard", 20.00)
+
         ));
     }
 

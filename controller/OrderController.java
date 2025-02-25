@@ -25,25 +25,26 @@ public class OrderController {
         frame.setContentPane(view);
         frame.setVisible(true);
 
-        //create a sandwich
+        //Instantiate a sandwich
         sandwich = model.createSandwich();
 
 
-        //instantiate actionListeners
+        //TODO: SET Action Listener
         view.setBackButtonAction(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                goToMenu();
+
             }        
         });
 
+        //TODO: SET ActionListener
         view.setNameInputAction(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                sandwich.setCustomerName(view.getCustomerName());
-                view.setNameLabel(sandwich.getCustomerName());
+
             }
         });
+        
         setMeatActions();
         setVeggieActions();
         setSauceActions();
@@ -52,7 +53,6 @@ public class OrderController {
             @Override
             public void actionPerformed(ActionEvent e){
                 sandwich.addBread(model.getBread(view.getBreadName()));
-                view.setCurTotal(sandwich.getPrice());
                 new ReceiptView(sandwich);
                 goToMenu();
             }
@@ -80,32 +80,15 @@ public class OrderController {
         view.setMeatActions(meatActions);
     }
 
+
+    //TODO: Complete the function
     private void setVeggieActions(){
-        ArrayList<ActionListener> veggieActions = new ArrayList<>();
-        for(String veggie: model.getVeggieNames()){
-            veggieActions.add(new ActionListener(){
-                @Override
-                public void actionPerformed(ActionEvent e){
-                    sandwich.addVeggie(model.getVeggie(veggie));
-                    view.setVeggieChoice(sandwich.getVeggieNames());
-                }
-            });
-        }
-        view.setVeggieActions(veggieActions);
+
     }
 
+    //TODO: Complete the Function.
     private void setSauceActions(){
-        ArrayList<ActionListener> sauceActions = new ArrayList<>();
-        for(String sauce: model.getSauceNames()){
-            sauceActions.add(new ActionListener(){
-                @Override
-                public void actionPerformed(ActionEvent e){
-                    sandwich.addSauce(model.getSauce(sauce));
-                    view.setSauceChoice(sandwich.getSauceNames());
-                }
-            });
-        }
-        view.setSauceActions(sauceActions);
+
     }
 
 
