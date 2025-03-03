@@ -87,7 +87,7 @@ public class OrderView extends JPanel {
         gbc.gridy = 3; 
         add(breadComponent, gbc);
 
-
+        //TODO: Add JPanel for selecting meat
 
         JLabel veggieLabel = new JLabel("Veggies: ");
         JPanel veggieButtonsPanel = new JPanel();
